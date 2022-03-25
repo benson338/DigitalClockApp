@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { GiTomato } from 'react-icons/gi';
 import { HiClock } from 'react-icons/hi';
 import { NavLink } from 'react-router-dom';
-import Greeting from './components/Greeting';
-import TimeContianer from './components/TimeContianer';
 
 function App() {
-  const [date] = useState(new Date());
-  console.log(date);
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+  }, []);
 
   function getGreeting(date) {
     const hours = date.getHours();
@@ -27,11 +30,9 @@ function App() {
   return (
     <div className="App">
       <div className="showcase">
-        {/* <h1 className="greeting">Time Is NOW</h1> */}
-        <Greeting getGreeting={getGreeting} date={date} />
-        {/* <div className="time-container">{date.toLocaleTimeString()}</div> */}
-        <TimeContianer />
-        <div className="date-container">
+        <h1 className="greeting">{getGreeting(date)}</h1>
+        <div className="timeContainer">{date.toLocaleTimeString()}</div>
+        <div className="dateContainer">
           {date.toLocaleDateString('en-Us', {
             weekday: 'long',
             day: 'numeric',
