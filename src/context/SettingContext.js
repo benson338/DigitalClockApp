@@ -41,7 +41,6 @@ const SettingContextProvider = (props) => {
   }
 
   // clear session storage
-  // should be called on settings btn
   function settingsCallback() {
     setExecuting({});
     setPomodoro(0);

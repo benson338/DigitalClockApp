@@ -44,8 +44,6 @@
 }
 .radio-btn.active-btn {
   background-color: #ee9910;
-  /* background-color: #ffad29; */
-  /* background-color: #fe6f6b; */
   color: #000;
 }
 .radio-btn {
@@ -133,6 +131,7 @@
   align-items: center;
   margin: 0.5rem;
 }
+
 label {
   font-size: 1.2rem;
   padding: 0.5rem;
