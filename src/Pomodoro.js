@@ -1,7 +1,90 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { IoIosSettings } from 'react-icons/io';
+import './styles/Pomodoro.css';
+import CountdownAnimation from './components/CountdownAnimation';
+import { SettingContext } from './context/SettingContext';
+import Settings from './components/Settings';
+import Button from './components/Button';
 
 const Pomodoro = () => {
-  return <div>Pomodoro</div>;
+  const {
+    pomodoro,
+    executing,
+    startAnimate,
+    updateExecute,
+    startTimer,
+    pauseTimer,
+    // stopAnimate,
+    children,
+    settingsCallback,
+    setCurrentTimer,
+  } = useContext(SettingContext);
+
+  useEffect(() => {
+    updateExecute(executing);
+    return () => {
+      settingsCallback();
+    };
+  }, [executing, settingsCallback, startAnimate, updateExecute]);
+
+  return (
+    <div className="Pomodoro">
+      <h1 className="title">Pomodoro</h1>
+
+      {pomodoro !== 0 ? (
+        <div className="pomodoroContainer">
+          <div className="radioButtons">
+            <Button
+              title="Work"
+              activeClass={
+                executing.active === 'work'
+                  ? 'radio-btn active-btn'
+                  : 'radio-btn'
+              }
+              callBack={() => setCurrentTimer('work')}
+            />
+            <Button
+              title="Break"
+              activeClass={
+                executing.active === 'break'
+                  ? 'radio-btn active-btn'
+                  : 'radio-btn'
+              }
+              callBack={() => setCurrentTimer('break')}
+            />
+          </div>
+          <div className="timerContainer">
+            <CountdownAnimation
+              key={pomodoro}
+              timer={pomodoro}
+              animate={startAnimate}
+              children={children}
+            />
+          </div>
+
+          <div className="buttonsContainer">
+            <Button
+              title="Start"
+              activeClass="btn start-btn"
+              callBack={startTimer}
+            />
+            <Button
+              title="Pause"
+              activeClass="btn pause-btn"
+              callBack={pauseTimer}
+            />
+            <Button
+              title={<IoIosSettings className="settingsIcon" fontSize="3rem" />}
+              activeClass="settingsBtn"
+              callBack={settingsCallback}
+            />
+          </div>
+        </div>
+      ) : (
+        <Settings />
+      )}
+    </div>
+  );
 };
 
 export default Pomodoro;

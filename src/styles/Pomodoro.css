@@ -1,0 +1,129 @@
+.Pomodoro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.Pomodoro .title {
+  position: absolute;
+  top: 0.8rem;
+  align-self: center;
+  /* font-weight: 400; */
+}
+
+.pomodoroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.radioButtons {
+  display: flex;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 4rem;
+  margin-top: -3rem;
+  background-color: #484848;
+  border-radius: 1rem;
+}
+.radio-btn.active-btn {
+  background-color: #ee9910;
+  /* background-color: #ffad29; */
+  /* background-color: #fe6f6b; */
+  color: #000;
+}
+.radio-btn {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border: none;
+  color: white;
+  background: #000;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.timerContainer {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.buttonsContainer {
+  margin-top: 1rem;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  /* width: 350px; */
+  gap: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #363636;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.7rem 1.3rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.start-btn {
+  background: #078f46;
+  color: #fff;
+}
+.start-btn:hover {
+  background-color: #067439;
+}
+
+.pause-btn {
+  background: #0b82b1;
+  color: #fff;
+}
+.pause-btn:hover {
+  background-color: #096589;
+}
+
+.settingsBtn {
+  background: transparent;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.settingsIcon {
+  color: rgba(203, 197, 197, 0.8);
+  text-decoration: none;
+  margin: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.settingsIcon:hover {
+  color: rgba(180, 180, 180, 0.5);
+}
+/* .buttons-container {
+  display: flex;
+} */
+/* 
+.btn {
+  display: inline-block;
+} */
+
+/* .buttons-container a {
+  color: rgba(180, 180, 180, 0.8);
+  text-decoration: none;
+  margin: 20px;
+}
+
+.buttons-container a:hover {
+  color: rgba(180, 180, 180, 0.5);
+} */
