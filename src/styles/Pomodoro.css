@@ -12,6 +12,19 @@
   align-self: center;
   /* font-weight: 400; */
 }
+.clockLink {
+  margin: 1rem;
+  position: absolute;
+  top: 0.7rem;
+  left: 0.5rem;
+}
+.clockIcon {
+  font-size: 3rem;
+  color: rgba(150, 150, 150, 0.8);
+}
+.clockIcon:hover {
+  color: rgba(170, 170, 170, 0.6);
+}
 
 .pomodoroContainer {
   display: flex;
@@ -80,21 +93,15 @@
   opacity: 0.9;
 }
 
-/* .start-btn {
-  background: #078f46;
-  color: #fff;
+.settings-btn {
+  background-color: #ee9910;
+  color: #000;
+  font-weight: 600;
+  margin: 1rem;
 }
-.start-btn:hover {
-  background-color: #067439;
+.settings-btn:hover {
+  background-color: #d4880e;
 }
-
-.pause-btn {
-  background: #0b82b1;
-  color: #fff;
-}
-.pause-btn:hover {
-  background-color: #096589;
-} */
 
 .settingsBtn {
   background: transparent;
@@ -119,20 +126,26 @@
   /* color: rgba(180, 180, 180, 0.5); */
   color: rgb(200, 200, 200, 0.7);
 }
-/* .buttons-container {
-  display: flex;
-} */
-/* 
-.btn {
-  display: inline-block;
-} */
 
-/* .buttons-container a {
-  color: rgba(180, 180, 180, 0.8);
-  text-decoration: none;
-  margin: 20px;
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+label {
+  font-size: 1.2rem;
+  padding: 0.5rem;
 }
 
-.buttons-container a:hover {
-  color: rgba(180, 180, 180, 0.5);
-} */
+.input {
+  width: 4rem;
+  font-size: medium;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+.input:focus {
+  padding: 0.32rem;
+  outline: 2px solid #ee9910;
+}

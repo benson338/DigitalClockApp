@@ -23,7 +23,6 @@ const Settings = () => {
       default:
         break;
     }
-    console.log(newTimer);
   };
 
   const handleSubmit = (e) => {
@@ -35,24 +34,30 @@ const Settings = () => {
     <div className="formContainer">
       <form noValidate onSubmit={handleSubmit}>
         <div className="input-wrapper">
-          <label htmlFor="work">Work: </label>
-          <input
-            className="input"
-            type="number"
-            name="work"
-            onChange={handleChange}
-            value={newTimer.work}
-          />
-          <label htmlFor="break">Break: </label>
-          <input
-            className="input"
-            type="number"
-            name="break"
-            onChange={handleChange}
-            value={newTimer.break}
-          />
+          <label htmlFor="work">
+            Work:{' '}
+            <input
+              className="input"
+              type="number"
+              name="work"
+              onChange={handleChange}
+              value={newTimer.work}
+            />
+          </label>
+          <label htmlFor="break">
+            Break:{' '}
+            <input
+              className="input"
+              type="number"
+              name="break"
+              onChange={handleChange}
+              value={newTimer.break}
+            />
+          </label>
         </div>
-        <button type="submit">Set Timer</button>
+        <button className="btn settings-btn" type="submit">
+          Set Timer
+        </button>
       </form>
     </div>
   );

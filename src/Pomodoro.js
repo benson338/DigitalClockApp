@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { IoIosSettings } from 'react-icons/io';
+import { HiClock } from 'react-icons/hi';
 import './styles/Pomodoro.css';
 import CountdownAnimation from './components/CountdownAnimation';
 import { SettingContext } from './context/SettingContext';
 import Settings from './components/Settings';
 import Button from './components/Button';
+import { Link } from 'react-router-dom';
 
 const Pomodoro = () => {
   const {
@@ -14,7 +16,6 @@ const Pomodoro = () => {
     updateExecute,
     startTimer,
     pauseTimer,
-    // stopAnimate,
     children,
     settingsCallback,
     setCurrentTimer,
@@ -31,6 +32,17 @@ const Pomodoro = () => {
     <div className="Pomodoro">
       <h1 className="title">Pomodoro</h1>
 
+      <Link
+        className="clockLink"
+        to="/"
+        onClick={() => {
+          pauseTimer();
+          settingsCallback();
+        }}
+      >
+        <HiClock className="clockIcon" />
+      </Link>
+
       {pomodoro !== 0 ? (
         <div className="pomodoroContainer">
           <div className="radioButtons">
@@ -42,6 +54,9 @@ const Pomodoro = () => {
                   : 'radio-btn'
               }
               callBack={() => setCurrentTimer('work')}
+              disabled={
+                executing.active === 'break' && startAnimate ? true : undefined
+              }
             />
             <Button
               title="Break"
@@ -51,6 +66,9 @@ const Pomodoro = () => {
                   : 'radio-btn'
               }
               callBack={() => setCurrentTimer('break')}
+              disabled={
+                executing.active === 'work' && startAnimate ? true : undefined
+              }
             />
           </div>
           <div className="timerContainer">
@@ -77,6 +95,7 @@ const Pomodoro = () => {
               title={<IoIosSettings className="settingsIcon" fontSize="3rem" />}
               activeClass="settingsBtn"
               callBack={settingsCallback}
+              onClick={pauseTimer}
             />
           </div>
         </div>

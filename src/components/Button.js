@@ -1,6 +1,13 @@
-const Button = ({ title, activeClass, callBack }) => {
+const Button = ({ title, activeClass, callBack, disabled, onClick }) => {
   return (
-    <button className={activeClass} onClick={callBack}>
+    <button
+      className={activeClass}
+      onClick={() => {
+        callBack();
+        if (onClick) onClick();
+      }}
+      disabled={disabled}
+    >
       {title}
     </button>
   );
