@@ -65,12 +65,12 @@ const Pomodoro = () => {
           <div className="buttonsContainer">
             <Button
               title="Start"
-              activeClass="btn start-btn"
+              activeClass={!startAnimate ? 'btn active-btn' : 'btn'}
               callBack={startTimer}
             />
             <Button
               title="Pause"
-              activeClass="btn pause-btn"
+              activeClass={startAnimate ? 'btn active-btn' : 'btn'}
               callBack={pauseTimer}
             />
             <Button
