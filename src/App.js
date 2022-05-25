@@ -3,7 +3,7 @@ import './styles/App.css';
 import { GiTomato } from 'react-icons/gi';
 import { HiClock } from 'react-icons/hi';
 import { NavLink } from 'react-router-dom';
-// import Panel from './components/Panel';
+import Panel from './components/Panel';
 
 function App() {
   const [date, setDate] = useState(new Date());
@@ -56,7 +56,7 @@ function App() {
         </NavLink>
       </div>
 
-      {/* <Panel /> */}
+      <Panel />
     </div>
   );
 }

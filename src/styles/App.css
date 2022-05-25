@@ -82,3 +82,39 @@
   opacity: 0.8;
   font-size: 0.9rem;
 }
+
+@media (max-width: 700px) {
+  .greeting {
+    font-size: 3rem;
+  }
+  .timeContainer {
+    font-size: 5rem;
+  }
+  .dateContainer {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .greeting {
+    font-size: 2.5rem;
+  }
+  .timeContainer {
+    font-size: 3.5rem;
+  }
+  .dateContainer {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .greeting {
+    font-size: 2.1rem;
+  }
+  .timeContainer {
+    font-size: 2.8rem;
+  }
+  .dateContainer {
+    font-size: 1.2rem;
+  }
+}

@@ -5,8 +5,8 @@ export const SettingContext = createContext();
 const SettingContextProvider = (props) => {
   const [pomodoro, setPomodoro] = useState(0.2);
   const [executing, setExecuting] = useState({
-    work: 0.2,
-    break: 0.1,
+    work: 25,
+    break: 5,
     active: 'work',
   });
   const [startAnimate, setStartAnimate] = useState(false);

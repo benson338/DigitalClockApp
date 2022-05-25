@@ -4,8 +4,10 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { SettingContext } from '../context/SettingContext';
 
 const CountdownAnimation = ({ key, timer, animate, children }) => {
-  const { stopAnimate, executing, setCurrentTimer } =
-    useContext(SettingContext);
+  const {
+    stopAnimate,
+    // executing, setCurrentTimer
+  } = useContext(SettingContext);
 
   return (
     <CountdownCircleTimer
@@ -18,11 +20,12 @@ const CountdownAnimation = ({ key, timer, animate, children }) => {
       size={250}
       onComplete={() => {
         stopAnimate();
-        if (executing.active === 'work') {
-          setCurrentTimer('break');
-        } else if (executing.active === 'break') {
-          setCurrentTimer('work');
-        }
+        // if (executing.active === 'work') {
+        //   setCurrentTimer('break');
+        // } else if (executing.active === 'break') {
+        //   setCurrentTimer('work');
+        // }
+        // automation removed due to library random bug
       }}
     >
       {children}

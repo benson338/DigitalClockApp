@@ -148,3 +148,9 @@ label {
   padding: 0.32rem;
   outline: 2px solid #ee9910;
 }
+
+@media (max-height: 630px) {
+  .radioButtons {
+    margin-top: 2.5rem;
+  }
+}
